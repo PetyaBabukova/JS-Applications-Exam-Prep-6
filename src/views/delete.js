@@ -5,7 +5,6 @@ export const deleteView = (ctx) => {
     if (confirmed) {
         catalogService.remove(ctx.params.itemId)
             .then(() => {
-                alert('Item deleted successfully.');
                 ctx.page.redirect('/catalog');
             })
             .catch(err => alert(err.message || 'Error deleting the item.'));
